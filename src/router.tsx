@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     // route들을 모아 현재 url에 맞는 화면을 결정하는 관리자
     {
         path: "/",
-        element: <Root />,
+        element: <Root />, // 기본 화면으로 Root를 표시함(Root내부는 여러 컴포넌트들로 구성하였음)
         errorElement:<NotFound />, //페이지가 없을 때 NotFound라는 component를 사용한다는 의미
         children: [
             {
