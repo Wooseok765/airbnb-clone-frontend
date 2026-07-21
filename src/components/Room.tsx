@@ -17,6 +17,8 @@ export default function Room() {
       <Box position={"relative"} mb={3} rounded={"2xl"} overflow={"hidden"}>
         <Image
           minH="280"
+          height={280}
+          w={"100%"}
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzwQ9bAiFTT6Gnjs3a8Gu8jbRlD_LVf7R20YO5Q1DUPg&s=10"
         />
         <Button
@@ -35,7 +37,14 @@ export default function Room() {
           <Text as={"b"} noOfLines={1} fontSize={"md"}>
             Tiny home in Killarney, Ireland
           </Text>
-          <HStack spacing={4}>
+          <HStack
+            _hover={{
+              color: "gold",
+            }}
+            spacing={4}
+          >
+            {" "}
+            {/* 호버링 했을 때 색 적용(HStack 영역 전체에) */}
             <FaStar size={15} />
             <Text>5.5</Text>
           </HStack>

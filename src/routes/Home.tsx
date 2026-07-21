@@ -1,4 +1,4 @@
-import { Grid } from "@chakra-ui/react";
+import { Box, Grid, Skeleton, SkeletonText } from "@chakra-ui/react";
 import Room from "../components/Room";
 // 홈 화면에 거래 가능한 방들을 띄워두고 보여주는것
 export default function Home() {
@@ -20,11 +20,14 @@ export default function Home() {
         "2xl": "repeat(5, 1fr)", // 수치로 화면크기를 지정했기에 str로 작성
       }}
     >
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
-        (index) => (
-          <Room key={index} /> // key 별로 구분하여 Room component를 만들고 랜더함(map과 연결된 어레이의 element 숫자만큼 실행, 그 숫자들이 index임)
-        ),
-      )}
+      <Box>
+        <Skeleton rounded={"2xl"} mb={7} w={"100%"} height={280} minH={280} />
+        <SkeletonText w={"70%"} noOfLines={2} mb={7} />
+        <SkeletonText w={"30%"} noOfLines={1} />
+      </Box>
+      {/* 로딩용 에니매이션을 가진 컴포넌트 */}
+      {/* Room 컴포넌트랑 같은 높이로 맞췄음 */}
+      <Room />
     </Grid>
   );
 }
